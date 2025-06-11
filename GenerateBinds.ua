@@ -1,6 +1,6 @@
-DIRECTORY   ← "C:\\Users\\ronan\\OneDrive\\Desktop\\Uiua projects\\PROGRESS\\GenerateBinds"
-INPUT       ← $"_\\OpenCL-Headers-main\\headers\\CL\\opencl.h" DIRECTORY
-INCLUDEPATH ← $"_\\OpenCL-Headers-main\\headers" DIRECTORY
+DIRECTORY   ← "C:\\PATH\\GenerateBinds"
+INPUT       ← $"_\\OpenCL-Headers-main\\headers\\CL\\opencl.h" DIRECTORY # Example
+INCLUDEPATH ← $"_\\OpenCL-Headers-main\\headers" DIRECTORY # Example
 
 $ VOID ← "void"
 $ CHAR ← "char"
