@@ -1,6 +1,6 @@
-DIRECTORY   ← "C:\\Users\\PathToDirectoryContainingHeaderFiles\\GenerateBinds"
-INPUT       ← $"_\\OpenCL-Headers-main\\headers\\CL\\opencl.h" DIRECTORY # Example using OpenCL headers
-INCLUDEPATH ← $"_\\OpenCL-Headers-main\\headers" DIRECTORY               # Example using OpenCL headers.
+DIRECTORY   ← "C:\\Users\\ronan\\OneDrive\\Desktop\\Uiua projects\\PROGRESS\\GenerateBinds"
+INPUT       ← $"_\\OpenCL-Headers-main\\headers\\CL\\opencl.h" DIRECTORY
+INCLUDEPATH ← $"_\\OpenCL-Headers-main\\headers" DIRECTORY
 
 $ VOID ← "void"
 $ CHAR ← "char"
@@ -36,11 +36,11 @@ DEFAULTBINDS ←
 
 # Second regex pass
 ◴⊂₅⊸⊃(
-  ≡⊢regex "__attribute__\s*\\(\\(.*\\)\\)"               # Remove __attribute__(()))
-| ≡⊢⬚0regex "#[0-9]+ \".*\"(\s[0-9])*"                   # Remove # ... PATH ...
-| ≡⊢⬚0regex "__extension__"                              # Remove __extension__
-| ≡⊢⬚0regex "union[\s\n\r]*\\{[a-zA-Z0-9_;\s\n\r]*\\} ;" # Remove union types
-| ≡⊢⬚0regex "\\[[0-9]*\\]"                               # Remove indexes
+  ≡⊢regex "__attribute__\s*\\(\\(.*\\)\\)"                       # Remove __attribute__(()))
+| ≡⊢⬚0regex "# [0-9]+[\s\n\r]*\".*\"(\s[0-9])*"                  # Remove # ... PATH ...
+| ≡⊢⬚0regex "__extension__"                                      # Remove __extension__
+| ≡⊢⬚0regex "union[\s\n\r]*\\{[a-zA-Z0-9_;\s\n\r]*\\}[\s\n\r]*;" # Remove union types
+| ≡⊢⬚0regex "\\[[0-9]*\\]"                                       # Remove indexes
 )
 ◌⍢(⊃(⋅∘|▽=0⊸⦷⊙⋅∘)°□⊢⊃↙↘ 1|≠0⧻.) # remove all above from file
 
